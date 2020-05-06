@@ -14,6 +14,10 @@ const server = http.createServer(app);
 const io = socketio(server);
 port = process.env.PORT || 3000;
 
+app.get("/", (req, res) => {
+  res.send("it is working");
+});
+
 io.on("connection", (socket) => {
   console.log("conn logged");
 
